@@ -11,7 +11,11 @@ const config = {
   },
   external: [/@babel\/runtime/, 'react'],
   plugins: [
-    babel({ babelHelpers: 'runtime', plugins: ['@babel/plugin-transform-runtime'] }),
+    babel({ 
+      babelHelpers: 'runtime',
+      plugins: ['@babel/plugin-transform-runtime'],
+      extensions: ['.js', '.jsx']
+    }),
     filesize(),
     svgo({
       plugins: [
