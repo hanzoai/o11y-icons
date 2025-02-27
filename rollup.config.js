@@ -1,20 +1,28 @@
 import { babel } from '@rollup/plugin-babel';
+import typescript from '@rollup/plugin-typescript';
 import filesize from 'rollup-plugin-filesize';
 import svgo from 'rollup-plugin-svgo';
 import { terser } from 'rollup-plugin-terser';
 
 const config = {
-  input: 'src/index.js',
+  input: 'src/index.ts',
   output: {
     file: 'dist/index.esm.js',
     format: 'esm',
+    sourcemap: true,
   },
   external: [/@babel\/runtime/, 'react'],
   plugins: [
+    typescript({ 
+      tsconfig: './tsconfig.json',
+      sourceMap: true,
+      outDir: 'dist',
+      declarationDir: 'dist/types'
+    }),
     babel({ 
       babelHelpers: 'runtime',
       plugins: ['@babel/plugin-transform-runtime'],
-      extensions: ['.js', '.jsx']
+      extensions: ['.ts', '.tsx']
     }),
     filesize(),
     svgo({
