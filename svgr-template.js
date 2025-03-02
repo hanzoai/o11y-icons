@@ -15,12 +15,16 @@ module.exports = function template(variables, { tpl }) {
       className,
       ...props
     }: IconProps): JSX.Element => {
-      return React.cloneElement(${variables.jsx}, {
+      const element = ${variables.jsx};
+      const hasViewBox = element.props.viewBox != null;
+      
+      return React.cloneElement(element, {
         width: size,
         height: size,
         stroke: color,
         strokeWidth: strokeWidth,
         className: \`signoz-icon \${className || ''}\`.trim(),
+        ...(hasViewBox ? {} : { viewBox: "0 0 24 24" }),
         ...props,
       });
     };
