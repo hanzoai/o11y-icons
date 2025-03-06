@@ -18,7 +18,7 @@
     "precheck": "pnpm run clean && pnpm run lint ",
     "clean": "rimraf src && rimraf dist",
     "build": "pnpm run svgr && rollup -c",
-    "svgr": "svgr --icon  --title-prop --replace-attr-values '#1D1D1D=currentColor' --typescript   -d src -- assets",
+    "svgr": "svgr --typescript  --replace-attr-values '#1D1D1D=currentColor' --template ./svgr-template.js -d src -- assets",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
     "commitlint": "commitlint --edit",
