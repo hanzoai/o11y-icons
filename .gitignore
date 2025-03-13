@@ -1,6 +1,3 @@
 node_modules
 dist
 src
-package-lock.json
-
-# Explicitly NOT ignoring pnpm-lock.yaml
