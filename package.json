@@ -1,5 +1,5 @@
 {
-  "name": "@signoz-icons/icons",
+  "name": "@signozhq/icons",
   "author": "SigNoz",
   "version": "0.0.0",
   "description": "SVG-based React icon components",
@@ -23,10 +23,14 @@
     "type-check": "tsc --noEmit",
     "commitlint": "commitlint --edit",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "pnpm run build && changeset publish"
   },
   "license": "MIT",
   "devDependencies": {
+    "@changesets/cli": "^2.27.8",
     "@babel/plugin-transform-runtime": "^7.22.5",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
