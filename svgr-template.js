@@ -6,28 +6,34 @@ module.exports = function template(variables, { tpl }) {
     export interface IconProps extends React.SVGProps<SVGSVGElement> {
       size?: number | string;
       strokeWidth?: number;
+      className?: string;
     }
 
     const ${variables.componentName} = ({
       color = 'currentColor',
-      size = 16,
+      size,
       strokeWidth = 2,
       className,
       ...props
     }: IconProps): JSX.Element => {
       const element = ${variables.jsx};
       const hasViewBox = element.props.viewBox != null;
+      const isCustomIcon = element.props['data-custom-icon'] === 'true';
+      const defaultSize = isCustomIcon ? element.props.width : 16;
       
-      return React.cloneElement(element, {
-        width: size,
-        height: size,
-        stroke: color,
-        strokeWidth: strokeWidth,
-        className: \`signoz-icon \${className || ''}\`.trim(),
-        ...(hasViewBox ? {} : { viewBox: "0 0 24 24" }),
+      const elementProps = {
+        width: size ?? defaultSize,
+        height: size ?? defaultSize,
+        className: className ? \`signoz-icon \${className}\` : 'signoz-icon',
+        ...(!isCustomIcon && { stroke: color, strokeWidth }),
+        ...(!isCustomIcon && !hasViewBox && { viewBox: "0 0 24 24" }),
         ...props,
-      });
+      };
+
+      return React.cloneElement(element, elementProps);
     };
+
+    ${variables.componentName}.displayName = '${variables.componentName}';
 
     export default ${variables.componentName};
   `;
