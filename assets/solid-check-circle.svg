@@ -1,6 +1,1 @@
-<svg width="57" height="57" viewBox="0 0 57 57" fill="none" xmlns="http://www.w3.org/2000/svg" data-custom-icon="true">
-<g id="solid-check-circle-2">
-<path id="Vector" d="M28.2498 51.9638C41.1368 51.9638 51.5832 41.5175 51.5832 28.6305C51.5832 15.7435 41.1368 5.29712 28.2498 5.29712C15.3628 5.29712 4.9165 15.7435 4.9165 28.6305C4.9165 41.5175 15.3628 51.9638 28.2498 51.9638Z" fill="#4E74F8" stroke="#4E74F8" stroke-width="4.66667" stroke-linecap="round" stroke-linejoin="round"/>
-<path id="Vector_2" d="M16.25 27.6304L24.2115 36.6304L39.25 22.6304" stroke="#121317" stroke-width="4.66667" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="57" height="57" fill="none" data-custom-icon="true"><g stroke-linecap="round" stroke-linejoin="round" stroke-width="4.667"><path fill="#4E74F8" stroke="#4E74F8" d="M28.25 51.964c12.887 0 23.333-10.446 23.333-23.333 0-12.888-10.446-23.334-23.333-23.334S4.917 15.744 4.917 28.631c0 12.886 10.446 23.333 23.333 23.333"/><path stroke="#121317" d="m16.25 27.63 7.962 9 15.038-14"/></g></svg>
