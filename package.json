@@ -47,7 +47,7 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-react": "^7.37.4",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.2",
+    "lint-staged": "^15.5.1",
     "prettier": "^2.8.8",
     "react": "^19.0.0",
     "rimraf": "^3.0.2",
