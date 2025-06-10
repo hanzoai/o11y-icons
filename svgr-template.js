@@ -1,5 +1,5 @@
 module.exports = function template(variables, { tpl }) {
-  return tpl`
+ return tpl`
     import * as React from 'react';
     import { JSX } from 'react/jsx-runtime';
     
@@ -20,12 +20,14 @@ module.exports = function template(variables, { tpl }) {
       const hasViewBox = element.props.viewBox != null;
       const isCustomIcon = element.props['data-custom-icon'] === 'true';
       const defaultSize = isCustomIcon ? element.props.width : 16;
+      const isLoadingSpinner = '${variables.componentName}' === 'SvgLoadingSpinner';
       
       const elementProps = {
         width: size ?? defaultSize,
         height: size ?? defaultSize,
         className: className ? \`signoz-icon \${className}\` : 'signoz-icon',
         ...(!isCustomIcon && { stroke: color, strokeWidth }),
+        ...(isCustomIcon && isLoadingSpinner && { style: { color, ...props.style }, viewBox: "0 0 24 24" }),
         ...(!isCustomIcon && !hasViewBox && { viewBox: "0 0 24 24" }),
         ...props,
       };
