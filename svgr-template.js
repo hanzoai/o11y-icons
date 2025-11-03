@@ -27,6 +27,7 @@ module.exports = function template(variables, { tpl }) {
         className: className ? \`signoz-icon \${className}\` : 'signoz-icon',
         ...(!isCustomIcon && { stroke: color, strokeWidth }),
         ...(!isCustomIcon && !hasViewBox && { viewBox: "0 0 24 24" }),
+        ...(isCustomIcon && { style: { color, ...props.style }, viewBox: "0 0 24 24" }),
         ...props,
       };
 
