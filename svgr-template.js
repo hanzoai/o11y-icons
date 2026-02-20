@@ -3,8 +3,19 @@ module.exports = function template(variables, { tpl }) {
     import * as React from 'react';
     import { JSX } from 'react/jsx-runtime';
     
+    export type IconSize = 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
+
+    const ICON_SIZE_MAP: Record<IconSize, number> = {
+      xxl: 24,
+      xl: 18,
+      lg: 16,
+      md: 14,
+      sm: 12,
+      xs: 10,
+    };
+
     export interface IconProps extends React.SVGProps<SVGSVGElement> {
-      size?: number | string;
+      size?: IconSize;
       strokeWidth?: number;
       className?: string;
     }
@@ -20,10 +31,11 @@ module.exports = function template(variables, { tpl }) {
       const hasViewBox = element.props.viewBox != null;
       const isCustomIcon = element.props['data-custom-icon'] === 'true';
       const defaultSize = isCustomIcon ? element.props.width : 16;
-      
+      const resolvedSize = size != null ? ICON_SIZE_MAP[size] : defaultSize;
+
       const elementProps = {
-        width: size ?? defaultSize,
-        height: size ?? defaultSize,
+        width: resolvedSize,
+        height: resolvedSize,
         className: className ? \`signoz-icon \${className}\` : 'signoz-icon',
         ...(!isCustomIcon && { stroke: color, strokeWidth }),
         ...(!isCustomIcon && !hasViewBox && { viewBox: "0 0 24 24" }),
