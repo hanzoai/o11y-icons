@@ -12,13 +12,7 @@ module.exports = {
     es2020: true,
     node: true,
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'prettier',
-  ],
+  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:import/errors', 'plugin:import/warnings', 'prettier', 'plugin:storybook/recommended'],
   plugins: ['import', 'react'],
   rules: {
     'import/order': [
