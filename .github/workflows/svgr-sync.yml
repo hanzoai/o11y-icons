@@ -1,0 +1,65 @@
+name: SVGR sync
+
+on:
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "assets/**"
+      - "svgr-template.js"
+      - "index-template.cjs"
+      - "package.json"
+  push:
+    branches: ["main"]
+    paths:
+      - "assets/**"
+      - "svgr-template.js"
+      - "index-template.cjs"
+      - "package.json"
+
+jobs:
+  svgr-sync:
+    name: SVGR – regenerate or verify
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Generate icon components from SVGs
+        run: pnpm run svgr
+
+      - name: Sync generated components
+        run: |
+          if git diff --exit-code src; then
+            echo "Generated components are in sync."
+            exit 0
+          fi
+          # On PRs: commit and push so the branch stays in sync
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add src
+            git commit -m "chore: regenerate icon components from SVGs [skip ci]"
+            git push
+            echo "Regenerated src/ and pushed to the branch."
+          else
+            # Push to main: require author to have run svgr (do not auto-commit to main)
+            echo "::error::Generated icon components are out of sync with assets/*.svg"
+            echo "Run \`pnpm run svgr\` and commit the updated src/ (or merge a PR where CI already did it)."
+            git diff --stat src
+            exit 1
+          fi
