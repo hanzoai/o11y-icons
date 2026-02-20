@@ -1,5 +1,5 @@
 module.exports = function template(variables, { tpl }) {
-  return tpl`
+ return tpl`
     import * as React from 'react';
     import { JSX } from 'react/jsx-runtime';
     

@@ -1,32 +1,32 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "SigNoz Icons Library",
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "lib": ["dom", "ES2015"],
-    "module": "ESNext",
-    "target": "es6",
-    "moduleResolution": "Bundler",
-    
-    "outDir": "dist",
-    "declarationDir": "dist/types",
-    "composite": false,
-    "declaration": true,
-    "declarationMap": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "inlineSources": false,
-    "isolatedModules": true,
-    
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    
-    "preserveWatchOutput": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "importHelpers": true
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
-} 
+ "$schema": "https://json.schemastore.org/tsconfig",
+ "display": "SigNoz Icons Library",
+ "compilerOptions": {
+  "jsx": "react-jsx",
+  "lib": ["dom", "ES2015"],
+  "module": "ESNext",
+  "target": "es6",
+  "moduleResolution": "Bundler",
+
+  "outDir": "dist",
+  "declarationDir": "dist/types",
+  "composite": false,
+  "declaration": true,
+  "declarationMap": true,
+  "esModuleInterop": true,
+  "forceConsistentCasingInFileNames": true,
+  "inlineSources": false,
+  "isolatedModules": true,
+
+  "noFallthroughCasesInSwitch": true,
+  "noUnusedLocals": false,
+  "noUnusedParameters": false,
+
+  "preserveWatchOutput": true,
+  "skipLibCheck": true,
+  "strict": true,
+  "importHelpers": true
+ },
+ "include": ["src"],
+ "exclude": ["node_modules", "dist"]
+}
