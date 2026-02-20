@@ -1,14 +1,3 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M7 21h10" />
-  <rect width="20" height="14" x="2" y="3" rx="2" />
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.66634 14H11.333M2.66634 2H13.333C14.0694 2 14.6663 2.59695 14.6663 3.33333V10C14.6663 10.7364 14.0694 11.3333 13.333 11.3333H2.66634C1.92996 11.3333 1.33301 10.7364 1.33301 10V3.33333C1.33301 2.59695 1.92996 2 2.66634 2Z" stroke="#2A2E37" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

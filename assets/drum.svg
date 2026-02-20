@@ -1,19 +1,10 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="m2 2 8 8" />
-  <path d="m22 2-8 8" />
-  <ellipse cx="12" cy="9" rx="10" ry="5" />
-  <path d="M7 13.4v7.9" />
-  <path d="M12 14v8" />
-  <path d="M17 13.4v7.9" />
-  <path d="M2 9v8a10 5 0 0 0 20 0V9" />
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_4607_2362)">
+<path d="M1.33301 1.33331L6.66634 6.66665M14.6663 1.33331L9.33301 6.66665M14.6663 5.99998C14.6663 7.84093 11.6816 9.33331 7.99967 9.33331M14.6663 5.99998C14.6663 4.15903 11.6816 2.66665 7.99967 2.66665C4.31778 2.66665 1.33301 4.15903 1.33301 5.99998M14.6663 5.99998V11.3333C14.6663 12.2174 13.964 13.0652 12.7137 13.6903C11.4635 14.3155 9.76778 14.6666 7.99967 14.6666M7.99967 9.33331C4.31778 9.33331 1.33301 7.84093 1.33301 5.99998M7.99967 9.33331V14.6666M1.33301 5.99998V11.3333C1.33301 12.2174 2.03539 13.0652 3.28563 13.6903C4.53587 14.3155 6.23156 14.6666 7.99967 14.6666M4.66634 8.93331V14.2M11.333 8.93331V14.2" stroke="#2A2E37" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_4607_2362">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
 </svg>

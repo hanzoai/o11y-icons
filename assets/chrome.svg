@@ -1,17 +1,10 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <circle cx="12" cy="12" r="4" />
-  <line x1="21.17" x2="12" y1="8" y2="8" />
-  <line x1="3.95" x2="8.54" y1="6.06" y2="14" />
-  <line x1="10.88" x2="15.46" y1="21.94" y2="14" />
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_4607_1992)">
+<path d="M7.99967 5.33331C6.52691 5.33331 5.33301 6.52722 5.33301 7.99998C5.33301 9.47274 6.52691 10.6666 7.99967 10.6666C9.47243 10.6666 10.6663 9.47274 10.6663 7.99998C10.6663 6.52722 9.47243 5.33331 7.99967 5.33331ZM7.99967 5.33331H14.113M2.63301 4.03998L5.69301 9.33331M7.25301 14.6266L10.3063 9.33331M14.6663 7.99998C14.6663 11.6819 11.6816 14.6666 7.99967 14.6666C4.31778 14.6666 1.33301 11.6819 1.33301 7.99998C1.33301 4.31808 4.31778 1.33331 7.99967 1.33331C11.6816 1.33331 14.6663 4.31808 14.6663 7.99998Z" stroke="#2A2E37" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_4607_1992">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
 </svg>

@@ -1,14 +1,3 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <polyline points="10 15 15 20 20 15" />
-  <path d="M4 4h7a4 4 0 0 1 4 4v12" />
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.66699 10L10.0003 13.3334M10.0003 13.3334L13.3337 10M10.0003 13.3334V5.33335C10.0003 4.62611 9.71937 3.94783 9.21928 3.44774C8.71918 2.94764 8.0409 2.66669 7.33366 2.66669H2.66699" stroke="#2A2E37" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

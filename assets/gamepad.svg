@@ -1,17 +1,3 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <line x1="6" x2="10" y1="12" y2="12" />
-  <line x1="8" x2="8" y1="10" y2="14" />
-  <line x1="15" x2="15.01" y1="13" y2="13" />
-  <line x1="18" x2="18.01" y1="11" y2="11" />
-  <rect width="20" height="12" x="2" y="6" rx="2" />
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.99967 8H6.66634M5.33301 6.66667V9.33333M9.99967 8.66667H10.0063M11.9997 7.33333H12.0063M2.66634 4H13.333C14.0694 4 14.6663 4.59695 14.6663 5.33333V10.6667C14.6663 11.403 14.0694 12 13.333 12H2.66634C1.92996 12 1.33301 11.403 1.33301 10.6667V5.33333C1.33301 4.59695 1.92996 4 2.66634 4Z" stroke="#2A2E37" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
