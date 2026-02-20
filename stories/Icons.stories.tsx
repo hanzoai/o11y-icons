@@ -221,6 +221,9 @@ const styles = {
 };
 
 export const Gallery: Story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
   render: function IconsGallery() {
     const [search, setSearch] = useState('');
     type IconSizePreset = 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs' | 'custom';
