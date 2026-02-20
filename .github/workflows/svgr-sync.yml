@@ -1,0 +1,44 @@
+name: SVGR sync
+
+on:
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "assets/**"
+      - "svgr-template.js"
+      - "index-template.cjs"
+      - "package.json"
+
+jobs:
+  svgr-check:
+    name: SVGR in sync
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Generate icon components from SVGs
+        run: pnpm run svgr
+
+      - name: Check components in sync with assets
+        run: |
+          if ! git diff --exit-code src; then
+            echo "::error::Generated icon components are out of sync with assets."
+            echo ""
+            echo "Run the following locally, then commit and push:"
+            echo "  pnpm run svgr"
+            echo ""
+            git diff --stat src
+            exit 1
+          fi
