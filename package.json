@@ -15,20 +15,22 @@
  ],
  "scripts": {
   "prebuild": "pnpm run precheck",
-  "precheck": "pnpm run clean && pnpm run lint ",
+  "precheck": "pnpm run clean && pnpm run lint",
   "clean": "rimraf src && rimraf dist",
   "build": "pnpm run svgr && rollup -c",
   "svgr": "rimraf src && svgr --typescript  --replace-attr-values '#1D1D1D=currentColor' --template ./svgr-template.js --index-template ./index-template.cjs -d src -- assets",
-  "lint": "eslint .",
+  "lint": "biome check .",
+  "lint:fix": "biome check --write .",
   "type-check": "tsc --noEmit",
   "commitlint": "commitlint --edit",
-  "format": "prettier --write .",
-  "format:check": "prettier --check .",
+  "format": "biome format --write .",
+  "format:check": "biome format .",
   "changeset": "changeset",
   "version": "changeset version",
   "release": "pnpm run build && changeset publish",
   "storybook": "pnpm run svgr && storybook dev -p 6006",
-  "build-storybook": "pnpm run svgr && storybook build"
+  "build-storybook": "pnpm run svgr && storybook build",
+  "update:browserslist": "pnpm dlx update-browserslist-db@latest"
  },
  "license": "MIT",
  "devDependencies": {
@@ -36,6 +38,7 @@
   "@babel/preset-env": "^7.16.4",
   "@babel/preset-react": "^7.16.0",
   "@babel/traverse": "^7.25.6",
+  "@biomejs/biome": "^2.4.3",
   "@changesets/cli": "^2.27.8",
   "@rollup/plugin-babel": "^5.3.0",
   "@rollup/plugin-typescript": "^12.1.2",
@@ -45,18 +48,9 @@
   "@storybook/react-vite": "^10.2.10",
   "@svgr/cli": "^6.1.2",
   "@types/react": "^18.2.0",
-  "@typescript-eslint/eslint-plugin": "^5.59.11",
-  "@typescript-eslint/parser": "^5.59.11",
   "chromatic": "^15.1.1",
-  "eslint": "^8.42.0",
-  "eslint-config-prettier": "^10.0.1",
-  "eslint-import-resolver-node": "^0.3.9",
-  "eslint-plugin-import": "^2.31.0",
-  "eslint-plugin-react": "^7.37.4",
-  "eslint-plugin-storybook": "10.2.10",
   "husky": "^8.0.3",
   "lint-staged": "^15.5.1",
-  "prettier": "^2.8.8",
   "react": "^18.2.0",
   "react-dom": "^18.2.0",
   "rimraf": "^3.0.2",
@@ -74,9 +68,8 @@
   "@commitlint/config-conventional": "^17.6.7"
  },
  "lint-staged": {
-  "*.{js,jsx,ts,tsx}": [
-   "prettier --write",
-   "eslint --fix"
+  "*.{js,jsx,ts,tsx,json,jsonc}": [
+   "biome check --write"
   ]
  },
  "resolutions": {
@@ -88,11 +81,5 @@
    "react": "^18.2.0",
    "react-dom": "^18.2.0"
   }
- },
- "eslintIgnore": [
-  "dist/**",
-  "src/**",
-  "assets/**",
-  "*.svg"
- ]
+ }
 }
