@@ -10,7 +10,7 @@ const preview = {
     (Story) =>
       React.createElement(
         "div",
-        { style: { fontFamily: "system-ui, sans-serif" } },
+        { style: { fontFamily: "'Inter', system-ui, sans-serif" } },
         React.createElement(Story)
       ),
   ],
