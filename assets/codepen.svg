@@ -1,17 +1,10 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
-  <line x1="12" x2="12" y1="22" y2="15.5" />
-  <polyline points="22 8.5 12 15.5 2 8.5" />
-  <polyline points="2 15.5 12 8.5 22 15.5" />
-  <line x1="12" x2="12" y1="2" y2="8.5" />
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_4607_2182)">
+<path d="M7.99967 1.33331L14.6663 5.66665M7.99967 1.33331L1.33301 5.66665M7.99967 1.33331V5.66665M14.6663 5.66665V10.3333M14.6663 5.66665L7.99967 10.3333M14.6663 10.3333L7.99967 14.6666M14.6663 10.3333L7.99967 5.66665M7.99967 14.6666L1.33301 10.3333M7.99967 14.6666V10.3333M1.33301 10.3333V5.66665M1.33301 10.3333L7.99967 5.66665M1.33301 5.66665L7.99967 10.3333" stroke="#2A2E37" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_4607_2182">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
 </svg>

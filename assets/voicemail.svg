@@ -1,15 +1,3 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="6" cy="12" r="4" />
-  <circle cx="18" cy="12" r="4" />
-  <line x1="6" x2="18" y1="16" y2="16" />
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.99967 10.6667C5.47243 10.6667 6.66634 9.47277 6.66634 8.00001C6.66634 6.52725 5.47243 5.33334 3.99967 5.33334C2.52692 5.33334 1.33301 6.52725 1.33301 8.00001C1.33301 9.47277 2.52692 10.6667 3.99967 10.6667ZM3.99967 10.6667H11.9997M11.9997 10.6667C13.4724 10.6667 14.6663 9.47277 14.6663 8.00001C14.6663 6.52725 13.4724 5.33334 11.9997 5.33334C10.5269 5.33334 9.33301 6.52725 9.33301 8.00001C9.33301 9.47277 10.5269 10.6667 11.9997 10.6667Z" stroke="#2A2E37" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

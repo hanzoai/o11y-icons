@@ -1,22 +1,3 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <rect width="16" height="20" x="4" y="2" rx="2" />
-  <line x1="8" x2="16" y1="6" y2="6" />
-  <line x1="16" x2="16" y1="14" y2="18" />
-  <path d="M16 10h.01" />
-  <path d="M12 10h.01" />
-  <path d="M8 10h.01" />
-  <path d="M12 14h.01" />
-  <path d="M8 14h.01" />
-  <path d="M12 18h.01" />
-  <path d="M8 18h.01" />
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.33366 4.00004H10.667M10.667 9.33337V12M10.667 6.66671H10.6737M8.00033 6.66671H8.00699M5.33366 6.66671H5.34033M8.00033 9.33337H8.00699M5.33366 9.33337H5.34033M8.00033 12H8.00699M5.33366 12H5.34033M4.00033 1.33337H12.0003C12.7367 1.33337 13.3337 1.93033 13.3337 2.66671V13.3334C13.3337 14.0698 12.7367 14.6667 12.0003 14.6667H4.00033C3.26395 14.6667 2.66699 14.0698 2.66699 13.3334V2.66671C2.66699 1.93033 3.26395 1.33337 4.00033 1.33337Z" stroke="#2A2E37" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

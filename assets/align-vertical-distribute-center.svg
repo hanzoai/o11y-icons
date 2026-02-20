@@ -1,18 +1,3 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M22 17h-3" />
-  <path d="M22 7h-5" />
-  <path d="M5 17H2" />
-  <path d="M7 7H2" />
-  <rect x="5" y="14" width="14" height="6" rx="2" />
-  <rect x="7" y="4" width="10" height="6" rx="2" />
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.6663 11.3333H12.6663M14.6663 4.66663H11.333M3.33301 11.3333H1.33301M4.66634 4.66663H1.33301M4.66634 9.33329H11.333C12.0694 9.33329 12.6663 9.93025 12.6663 10.6666V12C12.6663 12.7363 12.0694 13.3333 11.333 13.3333H4.66634C3.92996 13.3333 3.33301 12.7363 3.33301 12V10.6666C3.33301 9.93025 3.92996 9.33329 4.66634 9.33329ZM5.99967 2.66663H9.99967C10.7361 2.66663 11.333 3.26358 11.333 3.99996V5.33329C11.333 6.06967 10.7361 6.66663 9.99967 6.66663H5.99967C5.26329 6.66663 4.66634 6.06967 4.66634 5.33329V3.99996C4.66634 3.26358 5.26329 2.66663 5.99967 2.66663Z" stroke="#2A2E37" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
