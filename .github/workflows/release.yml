@@ -6,52 +6,7 @@ on:
       - "main"
 
 jobs:
-  svgr-sync:
-    name: Regenerate icon components
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    outputs:
-      pushed: ${{ steps.sync.outputs.pushed }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "pnpm"
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Generate icon components from SVGs
-        run: pnpm run svgr
-
-      - name: Commit and push if out of sync
-        id: sync
-        run: |
-          if git diff --exit-code src; then
-            echo "pushed=false" >> "$GITHUB_OUTPUT"
-            echo "Generated components already in sync."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src
-          git commit -m "chore: regenerate icon components from SVGs"
-          git push
-          echo "pushed=true" >> "$GITHUB_OUTPUT"
-          echo "Regenerated src/ and pushed to main. Release will run on the next workflow trigger."
-
   release:
-    needs: svgr-sync
-    if: needs.svgr-sync.outputs.pushed != 'true'
     uses: signoz/primus.workflows/.github/workflows/js-release.yaml@js-release
     secrets: inherit
     with:
