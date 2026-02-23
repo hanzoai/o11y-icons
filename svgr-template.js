@@ -53,7 +53,9 @@ module.exports = function template(variables, { tpl }) {
           ? strokeWidth
           : typeof size === 'string' && size in STROKE_WIDTH_MAP
             ? STROKE_WIDTH_MAP[size]
-            : 2;
+            : size == null
+              ? STROKE_WIDTH_MAP.xs
+              : 2;
 
       const w = element.props.width != null ? Number(element.props.width) : 24;
       const h = element.props.height != null ? Number(element.props.height) : 24;
