@@ -3,15 +3,26 @@ module.exports = function template(variables, { tpl }) {
     import * as React from 'react';
     import { JSX } from 'react/jsx-runtime';
     
-    export type IconSize = 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
+    export type IconSize = 'xxxl' | 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
 
     const ICON_SIZE_MAP: Record<IconSize, number> = {
-      xs: 16,
-      sm: 18,
-      md: 20,
-      lg: 22,
-      xl: 24,
-      xxl: 28,
+      xs: 10,
+      sm: 12,
+      md: 14,
+      lg: 16,
+      xl: 18,
+      xxl: 20,
+      xxxl: 24,
+    };
+
+    const STROKE_WIDTH_MAP: Record<IconSize, number> = {
+      xs: 0.83,
+      sm: 1,
+      md: 1.17,
+      lg: 1.33,
+      xl: 1.5,
+      xxl: 1.67,
+      xxxl: 2,
     };
 
     export interface IconProps extends React.SVGProps<SVGSVGElement> {
@@ -23,7 +34,7 @@ module.exports = function template(variables, { tpl }) {
     const ${variables.componentName} = ({
       color = 'currentColor',
       size,
-      strokeWidth = 2,
+      strokeWidth,
       className,
       ...props
     }: IconProps): JSX.Element => {
@@ -37,6 +48,12 @@ module.exports = function template(variables, { tpl }) {
             ? size
             : ICON_SIZE_MAP[size]
           : defaultSize;
+      const resolvedStrokeWidth =
+        strokeWidth != null
+          ? strokeWidth
+          : typeof size === 'string' && size in STROKE_WIDTH_MAP
+            ? STROKE_WIDTH_MAP[size]
+            : 2;
 
       const w = element.props.width != null ? Number(element.props.width) : 24;
       const h = element.props.height != null ? Number(element.props.height) : 24;
@@ -45,7 +62,7 @@ module.exports = function template(variables, { tpl }) {
       const elementProps = {
         ...props,
         className: className ? \`signoz-icon \${className}\` : 'signoz-icon',
-        ...(!isCustomIcon && { stroke: color, strokeWidth }),
+        ...(!isCustomIcon && { stroke: color, strokeWidth: resolvedStrokeWidth }),
         ...(!isCustomIcon && !hasViewBox && { viewBox: viewBoxWhenMissing }),
         ...(isCustomIcon && { style: { color, ...props.style }, viewBox: viewBoxWhenMissing }),
         width: resolvedSize,

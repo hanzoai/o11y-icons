@@ -1,0 +1,85 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Docs" />
+
+# @signozhq/icons
+
+SVG-based React icon components with fixed size presets and custom sizing.
+
+---
+
+## Installation
+
+```bash
+# pnpm
+pnpm add @signozhq/icons
+
+# npm
+npm install @signozhq/icons
+
+# yarn
+yarn add @signozhq/icons
+```
+
+---
+
+## Usage
+
+Import the icon component you need and render it. Icons accept `size`, `color`, and `strokeWidth` (and standard SVG props).
+
+```tsx
+import { ArrowRight } from '@signozhq/icons';
+
+<ArrowRight size="lg" color="#2A2E37" />
+```
+
+---
+
+## Fixed sizes (presets)
+
+Use a **preset** when you want icons to match the design system: each preset defines both the icon size (in pixels) and a stroke width so icons stay sharp and consistent across the UI. Pass the preset name to the `size` prop.
+
+### Quick reference
+
+| Preset | Size | Stroke width |
+|--------|------|--------------|
+| `xs` | 10px | 0.83 |
+| `sm` | 12px | 1 |
+| `md` | 14px | 1.17 |
+| `lg` | 16px | 1.33 |
+| `xl` | 18px | 1.5 |
+| `xxl` | 20px | 1.67 |
+| `xxxl` | 24px | 2 |
+
+### Example
+
+```tsx
+<ArrowRight size="sm" />   {/* 12px, stroke 1 */}
+<ArrowRight size="lg" />   {/* 16px, stroke 1.33 */}
+<ArrowRight size="xxl" />  {/* 20px, stroke 1.67 */}
+```
+
+You can override the stroke for a preset with the `strokeWidth` prop if needed.
+
+---
+
+## Custom size
+
+Pass a number to `size` for any pixel dimension. Stroke width defaults to `2` when using a custom size; override with `strokeWidth` if needed.
+
+```tsx
+<ArrowRight size={32} />
+<ArrowRight size={48} strokeWidth={1.5} color="currentColor" />
+```
+
+---
+
+## Other props
+
+- **`color`** — Stroke/fill color (default: `"currentColor"`).
+- **`strokeWidth`** — Override stroke width when using a preset or custom size.
+- **`className`** — Applied alongside the default `signoz-icon` class.
+
+---
+
+Browse the **Icons / Gallery** in the sidebar to search and preview all icons and copy snippets.

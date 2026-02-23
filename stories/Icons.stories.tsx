@@ -30,7 +30,7 @@ const meta: Meta = {
   layout: 'fullscreen',
   docs: {
    description: {
-    component: 'All icons from the library. Use the search to filter by name.',
+    component: 'Browse and search all icons. For install and usage (fixed sizes, custom size), see **Docs** in the sidebar.',
    },
   },
  },
@@ -233,7 +233,7 @@ export const Gallery: Story = {
  },
  render: function IconsGallery() {
   const [search, setSearch] = useState('');
-  type IconSizePreset = 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs' | 'custom';
+  type IconSizePreset = 'xxxl' | 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs' | 'custom';
   const [sizePreset, setSizePreset] = useState<IconSizePreset>('lg');
   const [customPxInput, setCustomPxInput] = useState('24');
   const [searchFocused, setSearchFocused] = useState(false);
@@ -346,12 +346,13 @@ export const Gallery: Story = {
         aria-label="Icon size"
         style={themeStyles.sizeSelect}
        >
-        <option value="xs">XS (16px)</option>
-        <option value="sm">SM (18px)</option>
-        <option value="md">MD (20px)</option>
-        <option value="lg">LG (22px)</option>
-        <option value="xl">XL (24px)</option>
-        <option value="xxl">XXL (28px)</option>
+        <option value="xs">XS (10px)</option>
+        <option value="sm">SM (12px)</option>
+        <option value="md">MD (14px)</option>
+        <option value="lg">LG (16px)</option>
+        <option value="xl">XL (18px)</option>
+        <option value="xxl">XXL (20px)</option>
+        <option value="xxxl">XXXL (24px)</option>
         <option value="custom">Custom</option>
        </select>
        {sizePreset === 'custom' && (
