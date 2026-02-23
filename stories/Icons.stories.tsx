@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React, { useMemo, useState } from 'react';
+import type { IconSize } from '../lib/icon-config';
 
-// Load all generated icon components directly (no barrel file needed). Exclude index.
-// Vite provides import.meta.glob at build time.
+type GallerySizePreset = IconSize | 'custom';
+
 const iconModules = (
  import.meta as unknown as { glob: (p: string, o?: { eager?: boolean }) => Record<string, unknown> }
 ).glob('../src/*.tsx', { eager: true }) as Record<
@@ -30,7 +31,8 @@ const meta: Meta = {
   layout: 'fullscreen',
   docs: {
    description: {
-    component: 'All icons from the library. Use the search to filter by name.',
+    component:
+     'Browse and search all icons. For install and usage (fixed sizes, custom size), see **Docs** in the sidebar.',
    },
   },
  },
@@ -233,8 +235,7 @@ export const Gallery: Story = {
  },
  render: function IconsGallery() {
   const [search, setSearch] = useState('');
-  type IconSizePreset = 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs' | 'custom';
-  const [sizePreset, setSizePreset] = useState<IconSizePreset>('lg');
+  const [sizePreset, setSizePreset] = useState<GallerySizePreset>('lg');
   const [customPxInput, setCustomPxInput] = useState('24');
   const [searchFocused, setSearchFocused] = useState(false);
   const [theme, setTheme] = useState<Theme>('light');
@@ -342,16 +343,19 @@ export const Gallery: Story = {
        <span style={themeStyles.sizeLabel}>Size</span>
        <select
         value={sizePreset}
-        onChange={(e) => setSizePreset(e.target.value as IconSizePreset)}
+        onChange={(e) => setSizePreset(e.target.value as GallerySizePreset)}
         aria-label="Icon size"
         style={themeStyles.sizeSelect}
        >
-        <option value="xs">XS (16px)</option>
-        <option value="sm">SM (18px)</option>
-        <option value="md">MD (20px)</option>
-        <option value="lg">LG (22px)</option>
-        <option value="xl">XL (24px)</option>
-        <option value="xxl">XXL (28px)</option>
+        <option value="xs">XS (10px)</option>
+        <option value="sm">SM (12px)</option>
+        <option value="md">MD (14px)</option>
+        <option value="lg">LG (16px)</option>
+        <option value="xl">XL (18px)</option>
+        <option value="2xl">2XL (20px)</option>
+        <option value="3xl">3XL (24px)</option>
+        <option value="4xl">4XL (28px)</option>
+        <option value="5xl">5XL (32px)</option>
         <option value="custom">Custom</option>
        </select>
        {sizePreset === 'custom' && (
