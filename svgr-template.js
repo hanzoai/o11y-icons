@@ -2,28 +2,10 @@ module.exports = function template(variables, { tpl }) {
  return tpl`
     import * as React from 'react';
     import { JSX } from 'react/jsx-runtime';
-    
-    export type IconSize = 'xxxl' | 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
+    import type { IconSize } from '../lib/icon-config';
+    import { ICON_SIZE_MAP, STROKE_WIDTH_MAP } from '../lib/icon-config';
 
-    const ICON_SIZE_MAP: Record<IconSize, number> = {
-      xs: 10,
-      sm: 12,
-      md: 14,
-      lg: 16,
-      xl: 18,
-      xxl: 20,
-      xxxl: 24,
-    };
-
-    const STROKE_WIDTH_MAP: Record<IconSize, number> = {
-      xs: 0.83,
-      sm: 1,
-      md: 1.17,
-      lg: 1.33,
-      xl: 1.5,
-      xxl: 1.67,
-      xxxl: 2,
-    };
+    export type { IconSize } from '../lib/icon-config';
 
     export interface IconProps extends React.SVGProps<SVGSVGElement> {
       size?: IconSize | number;
