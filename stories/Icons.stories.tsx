@@ -231,7 +231,7 @@ const styles = {
 
 export const Gallery: Story = {
  parameters: {
-  chromatic: { disable: true },
+  chromatic: { disableSnapshot: true },
  },
  render: function IconsGallery() {
   const [search, setSearch] = useState('');
