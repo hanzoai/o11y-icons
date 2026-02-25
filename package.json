@@ -30,7 +30,8 @@
   "release": "pnpm run build && changeset publish",
   "storybook": "pnpm run svgr && storybook dev -p 6006",
   "build-storybook": "pnpm run svgr && storybook build",
-  "update:browserslist": "pnpm dlx update-browserslist-db@latest"
+  "update:browserslist": "pnpm dlx update-browserslist-db@latest",
+  "chromatic": "npx chromatic"
  },
  "license": "MIT",
  "devDependencies": {
