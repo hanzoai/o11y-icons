@@ -33,12 +33,12 @@ jobs:
 
       - name: Check components in sync with assets
         run: |
-          if ! git diff --exit-code src; then
+          if ! git diff --exit-code lib/icons; then
             echo "::error::Generated icon components are out of sync with assets."
             echo ""
             echo "Run the following locally, then commit and push:"
             echo "  pnpm run svgr"
             echo ""
-            git diff --stat src
+            git diff --stat lib/icons
             exit 1
           fi

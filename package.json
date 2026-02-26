@@ -16441,10 +16441,10 @@
  "scripts": {
   "prebuild": "pnpm run precheck",
   "postbuild": "publint",
-  "precheck": "pnpm run clean && pnpm run lint",
-  "clean": "rimraf src && rimraf dist",
-  "build": "pnpm run svgr && vite build",
+  "precheck": "pnpm run lint",
+  "build": "vite build",
   "svgr": "rimraf lib/icons/*.tsx && svgr --typescript --replace-attr-values '#1D1D1D=currentColor' --template ./svgr-template.cjs --index-template ./index-template.cjs -d lib/icons -- assets",
+  "postsvgr": "pnpm run lint:fix",
   "lint": "biome check .",
   "lint:fix": "biome check --write .",
   "publint": "publint",
@@ -16455,7 +16455,7 @@
   "changeset": "changeset",
   "version": "changeset version",
   "release": "pnpm run build && changeset publish",
-  "storybook": "pnpm run svgr && storybook dev -p 6006",
+  "storybook": "storybook dev -p 6006",
   "build-storybook": "pnpm run svgr && storybook build",
   "update:browserslist": "pnpm dlx update-browserslist-db@latest",
   "chromatic": "npx chromatic"

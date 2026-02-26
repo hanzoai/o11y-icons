@@ -1,0 +1,68 @@
+import type React from 'react';
+import { cloneElement } from 'react';
+import type { IconSize } from '../icon-config.js';
+import { ICON_SIZE_MAP, STROKE_WIDTH_MAP } from '../icon-config.js';
+export interface IconProps extends React.SVGProps<SVGSVGElement> {
+ size?: IconSize | number;
+ strokeWidth?: number;
+ className?: string;
+}
+const SvgMessageCircleDashed = ({
+ color = 'currentColor',
+ size,
+ strokeWidth,
+ className,
+ ...props
+}: IconProps): React.ReactElement => {
+ const element = (
+  <svg width={16} height={16} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+   <path
+    d="M9 2.067C8.666 2.067 8.333 2 8 2c-.334 0-.667.067-1 .067m5.866 2.466a6.964 6.964 0 0 0-1.4-1.4M13.933 9C14 8.667 14 8.333 14 8c0-.333-.067-.667-.067-1m-2.467 5.867a6.967 6.967 0 0 0 1.4-1.4M7 13.933C7.333 14 7.666 14 8 14c.333 0 .666-.067 1-.067m-6.667-2.266-1 3 3-1M2.066 7c0 .333-.066.667-.066 1 0 .333.066.667.066 1m2.467-5.867c-.53.398-1.002.87-1.4 1.4"
+    stroke="#2A2E37"
+    strokeWidth={1.33}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+   />
+  </svg>
+ );
+ const hasViewBox = element.props.viewBox != null;
+ const isCustomIcon = element.props['data-custom-icon'] === 'true';
+ const defaultSize = isCustomIcon ? element.props.width : ICON_SIZE_MAP.xs;
+ const resolvedSize =
+  size != null ? (typeof size === 'number' ? size : ICON_SIZE_MAP[size]) : defaultSize;
+ const resolvedStrokeWidth =
+  strokeWidth != null
+   ? strokeWidth
+   : typeof size === 'string' && size in STROKE_WIDTH_MAP
+     ? STROKE_WIDTH_MAP[size]
+     : size == null
+       ? STROKE_WIDTH_MAP.xs
+       : 2;
+ const w = element.props.width != null ? Number(element.props.width) : 24;
+ const h = element.props.height != null ? Number(element.props.height) : 24;
+ const viewBoxWhenMissing = `0 0 ${w} ${h}`;
+ const elementProps = {
+  ...props,
+  className: className ? `signoz-icon ${className}` : 'signoz-icon',
+  ...(!isCustomIcon && {
+   stroke: color,
+   strokeWidth: resolvedStrokeWidth,
+  }),
+  ...(!isCustomIcon &&
+   !hasViewBox && {
+    viewBox: viewBoxWhenMissing,
+   }),
+  ...(isCustomIcon && {
+   style: {
+    color,
+    ...props.style,
+   },
+   viewBox: viewBoxWhenMissing,
+  }),
+  width: resolvedSize,
+  height: resolvedSize,
+ };
+ return cloneElement(element, elementProps);
+};
+SvgMessageCircleDashed.displayName = 'SvgMessageCircleDashed';
+export default SvgMessageCircleDashed;

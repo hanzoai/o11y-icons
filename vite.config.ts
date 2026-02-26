@@ -62,6 +62,7 @@ export default defineConfig({
    fileName: (format) => (format === 'es' ? '[name].js' : '[name].cjs'),
   },
   outDir: 'dist',
+  emptyOutDir: true,
   sourcemap: true,
   rollupOptions: {
    external: ['react', 'react/jsx-runtime'],

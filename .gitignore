@@ -1,5 +1,4 @@
 node_modules
 dist
-lib/icons/*.tsx
 storybook-static
 .idea
