@@ -7,7 +7,7 @@ type GallerySizePreset = IconSize | 'custom';
 
 const iconModules = (
  import.meta as unknown as { glob: (p: string, o?: { eager?: boolean }) => Record<string, unknown> }
-).glob('../src/*.tsx', { eager: true }) as Record<
+).glob('../lib/icons/*.tsx', { eager: true }) as Record<
  string,
  { default: React.ComponentType<{ size?: string | number; color?: string }> }
 >;
