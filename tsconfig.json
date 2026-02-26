@@ -3,16 +3,15 @@
  "display": "SigNoz Icons Library",
  "compilerOptions": {
   "jsx": "react-jsx",
-  "lib": ["dom", "ES2015"],
+  "lib": ["dom", "ES2018"],
   "module": "ESNext",
-  "target": "es6",
+  "target": "es2018",
   "moduleResolution": "Bundler",
-
   "outDir": "dist",
   "declarationDir": "dist/types",
   "composite": false,
   "declaration": true,
-  "declarationMap": true,
+  "declarationMap": false,
   "esModuleInterop": true,
   "forceConsistentCasingInFileNames": true,
   "inlineSources": false,
@@ -27,6 +26,6 @@
   "strict": true,
   "importHelpers": true
  },
- "include": ["src", "lib"],
+ "include": ["lib"],
  "exclude": ["node_modules", "dist"]
 }

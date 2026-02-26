@@ -1,11 +1,9 @@
 module.exports = function template(variables, { tpl }) {
  return tpl`
-    import * as React from 'react';
-    import { JSX } from 'react/jsx-runtime';
-    import type { IconSize } from '../lib/icon-config';
-    import { ICON_SIZE_MAP, STROKE_WIDTH_MAP } from '../lib/icon-config';
-
-    export type { IconSize } from '../lib/icon-config';
+    import type React from 'react';
+    import { cloneElement } from 'react';
+    import type { IconSize } from '../icon-config.js';
+    import { ICON_SIZE_MAP, STROKE_WIDTH_MAP } from '../icon-config.js';
 
     export interface IconProps extends React.SVGProps<SVGSVGElement> {
       size?: IconSize | number;
@@ -19,7 +17,7 @@ module.exports = function template(variables, { tpl }) {
       strokeWidth,
       className,
       ...props
-    }: IconProps): JSX.Element => {
+    }: IconProps): React.ReactElement => {
       const element = ${variables.jsx};
       const hasViewBox = element.props.viewBox != null;
       const isCustomIcon = element.props['data-custom-icon'] === 'true';
@@ -53,7 +51,7 @@ module.exports = function template(variables, { tpl }) {
         height: resolvedSize,
       };
 
-      return React.cloneElement(element, elementProps);
+      return cloneElement(element, elementProps);
     };
 
     ${variables.componentName}.displayName = '${variables.componentName}';
