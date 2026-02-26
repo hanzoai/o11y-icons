@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import React, { useMemo, useState } from 'react';
+import type React from 'react';
+import { useMemo, useState } from 'react';
 import type { IconSize } from '../lib/icon-config';
 
 type GallerySizePreset = IconSize | 'custom';
