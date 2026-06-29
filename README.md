@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/hero.svg" alt="o11y-icons" width="880"></p>
+
 # @signoz/icons
 
 ## Description
