@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  # The generated components are committed, so they can drift from the SVGs they
+  # came from. Regenerating and diffing is the only thing that catches it.
+  svgr:
+    runs-on: [hanzo-build-linux-amd64]
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: corepack enable pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Generate icon components from SVGs
+        run: pnpm run svgr
+
+      - name: Components in sync with assets
+        run: |
+          if ! git diff --exit-code lib/icons; then
+            echo "::error::generated icon components are out of sync with assets — run 'pnpm run svgr' and commit the result"
+            git diff --stat lib/icons
+            exit 1
+          fi
+
+  # Building the stories compiles every icon against the library's public
+  # exports, which is the closest thing this package has to an integration test.
+  storybook:
+    runs-on: [hanzo-build-linux-amd64]
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: corepack enable pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm run build-storybook
